@@ -8,6 +8,6 @@ A Clojure library designed to create a suffix tree given a string or vector
 
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2016 Nathan Lloyd
 
 Distributed under the Eclipse Public License either version 1.0 or any later version.
