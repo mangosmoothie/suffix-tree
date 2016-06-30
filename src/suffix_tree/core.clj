@@ -10,8 +10,7 @@
         (recur (z/right cloc))))))
 
 (defn create-suffix-tree [input]
-  (let [invec (if (vector? input) input (into [] input))
-        lenvec (count invec)]
+  (let [lenvec (count input)]
     (loop [i 0
            root (z/zipper vector? seq (fn [_ c] (into [] c)) [])]
       (if (= i lenvec)
@@ -24,7 +23,7 @@
                            loc root]
                       (if (= n lenvec)
                         (z/append-child loc i)
-                        (let [c (invec n)]
+                        (let [c (nth input n)]
                           (if (some #(and (vector? %) (= c (% 0))) (z/children loc))
                             (recur (inc n) (get-child-branch loc c))
                             (recur (inc n) 
